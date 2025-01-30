@@ -140,7 +140,7 @@ Antes de rodar a aplicação, certifique-se de ter os seguintes requisitos insta
 A documentação da API pode ser acessada via Swagger. Após rodar a aplicação, acesse o seguinte endereço no navegador:
 
 ```
-http://localhost:8080/swagger-ui/index.html
+http://localhost:8085/swagger-ui/index.html
 ```
 
 Lá você poderá visualizar todos os endpoints disponíveis, suas descrições, parâmetros de entrada, exemplos de respostas, e até mesmo testar as requisições diretamente pela interface gráfica.
