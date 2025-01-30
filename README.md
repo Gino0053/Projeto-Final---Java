@@ -169,7 +169,7 @@ A estrutura do projeto é organizada da seguinte forma:
 │   │   │               ├── repository
 │   │   │               ├── response
 │   │   │               ├── service
-│   │   │               ├── util
+│   │   │               ├── shortcut
 │   │   │               └── web
 │   │   │                   └── controller
 │   │   └── resources
