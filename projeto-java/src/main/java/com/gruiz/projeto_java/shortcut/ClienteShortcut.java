@@ -19,11 +19,17 @@ public class ClienteShortcut {
 		if (!cliente.getCorrentista()) {
 			cliente.setSaldoCc(null);
 			cliente.setScoreCredito(CREDITO_BASE);
-		}else if(cliente.getCorrentista() && cliente.getSaldoCc() <= 2000) {
+		}
+		else if (cliente.getCorrentista() && cliente.getSaldoCc() <= 0){
+			cliente.setScoreCredito(0f);
+		}
+		else if(cliente.getCorrentista() && cliente.getSaldoCc() <= 2000) {
 			cliente.setScoreCredito(CREDITO_BASE);
-		} else if(cliente.getSaldoCc() > 2000) {
+		}
+		else if(cliente.getSaldoCc() > 2000) {
 			cliente.setScoreCredito((float) (cliente.getSaldoCc() * 0.1));
 		}
+		
 		return cliente;
 	}
 	
