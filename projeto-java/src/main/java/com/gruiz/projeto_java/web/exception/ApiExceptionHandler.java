@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.gruiz.projeto_java.exception.ClientNotFoundException;
+import com.gruiz.projeto_java.exception.SaldoNegativoException;
 import com.gruiz.projeto_java.exception.TelefoneUniqueViolationException;
 import com.gruiz.projeto_java.exception.CheckCorrentistaException;
 
@@ -27,6 +28,12 @@ public class ApiExceptionHandler {
     
     @ExceptionHandler(CheckCorrentistaException.class)
     public ResponseEntity<Object> CheckCorrentistaException(CheckCorrentistaException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                             .body(new ErrorResponse(ex.getMessage()));
+    }
+    
+    @ExceptionHandler(SaldoNegativoException.class)
+    public ResponseEntity<Object> saldoNegativoException(SaldoNegativoException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                              .body(new ErrorResponse(ex.getMessage()));
     }
